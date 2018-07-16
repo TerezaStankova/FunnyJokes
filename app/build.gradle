@@ -62,9 +62,7 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:27.1.1'
 
 
-    implementation ('com.google.api-client:google-api-client:1.23.0'){
-        exclude module: 'guava-jdk5'
-    }
+    implementation ('com.google.api-client:google-api-client:1.23.0')
 
     implementation 'com.google.http-client:google-http-client-android:1.23.0'
 
@@ -73,7 +71,6 @@ dependencies {
 
     implementation project(':JokeLibrary')
     implementation project(':jokedisplay')
-    implementation project (':backend')
 
     androidTestImplementation('com.android.support.test.espresso:espresso-core:3.0.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
