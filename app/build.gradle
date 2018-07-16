@@ -31,16 +31,34 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    //Specify one dimension for free/paid versions
+    flavorDimensions "monetize"
+
+    //Create two different versions - free and paid
+    productFlavors{
+        free {
+            dimension "monetize"
+            //applicationId "com.udacity.gradle.builditbigger.free"
+        }
+        paid {
+            dimension "monetize"
+            //applicationId "com.udacity.gradle.builditbigger.paid"
+        }
+    }
 }
+
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     endpointsServer project(path: ':backend', configuration: 'endpoints')
     implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation ('com.google.android.gms:play-services-ads:15.0.1') {
+
+    //Apply only for the free version of our app
+    freeImplementation ('com.google.android.gms:play-services-ads:15.0.1') {
     exclude group: 'com.android.support'
 }
-    //implementation 'com.android.support:customtabs:27.1.1'
 
     implementation ('com.google.api-client:google-api-client:1.23.0'){
         exclude module: 'guava-jdk5'

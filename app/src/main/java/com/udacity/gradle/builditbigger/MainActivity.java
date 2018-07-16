@@ -52,6 +52,4 @@ public class MainActivity extends AppCompatActivity {
 
         //Toast.makeText(this, jokeText, Toast.LENGTH_SHORT).show();
     }
-
-
 }
